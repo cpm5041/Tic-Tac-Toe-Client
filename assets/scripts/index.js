@@ -18,8 +18,18 @@ $(() => {
 })
 
 let empty = ''
-let board = [empty, empty, empty, empty, empty, empty, empty, empty, empty]
-
+let board = [
+  empty,
+  empty,
+  empty,
+  empty,
+  empty,
+  empty,
+  empty,
+  empty,
+  empty
+]
+// let boardIndex =
 const player1 = 'X'
 const player2 = 'O'
 let currentPlayer = player1
@@ -34,3 +44,5 @@ const clickValue = function () {
   return clickValue
 }
 $('.box').on('click', clickValue())
+
+// add event listener, it was called back
