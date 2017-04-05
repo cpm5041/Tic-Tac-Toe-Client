@@ -1,25 +1,60 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <title>Chris's Tic Tac Toe Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/styles/index.scss">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <body class="container-fluid">
+      <form id="sign-up" class="credentials">
+        <fieldset>
+          <legend>Sign up to play!</legend>
+          <input type="text" name="credentials[email]" value="" placeholder="email">
+          <input type="password" name="credentials[password]" value="" placeholder="password">
+          <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
+          <input class="credentials" type="submit" name="submit" value="Sign up!">
+        </fieldset>
+      </form>
+      <form id="sign-in" class="credentials">
+        <fieldset>
+          <legend>Sign in!</legend>
+          <input type="text" name="credentials[email]" value="" placeholder="email">
+          <input type="password" name="credentials[password]" value="" placeholder="password">
+          <input class="credentials" type="submit" name="submit" value="Sign in!">
+        </fieldset>
+      </form>
+      <form id="sign-out" class="credentials">
+        <fieldset>
+          <legend>Sign out!</legend>
+          <input class="credentials" type="submit" name="submit" value="Sign out!">
+        </fieldset>
+      </form>
+      <form id="change-password" class="credentials">
+        <fieldset>
+          <legend>Change Password</legend>
+          <input type="password" name="passwords[old]" value="" placeholder="Old Password">
+          <input type="password" name="passwords[new]" value="" placeholder="New Password">
+          <input class="credentials" type="submit" name="submit" value="Change Password">
+        </fieldset>
+      </form>
+  <h1 class='welcome'>Welcome to Tic-Tac-Toe!</h1>
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+  <br>
+  <div class='game-board'>
+    <div class='boxOne box'> 1 </div>
+    <div class='boxTwo box'> 2 </div>
+    <div class='boxThree box'> 3 </div>
+    <div class='boxFour box'> 4 </div>
+    <div class='boxFive box'> 5 </div>
+    <div class='boxSix box'> 6 </div>
+    <div class='boxSeven box'> 7 </div>
+    <div class='boxEight box'> 8 </div>
+    <div class='boxNine box'> 9 </div>
+  </div>
+</body>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-    </body>
 </html>
