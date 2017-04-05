@@ -16,13 +16,21 @@ require('./example')
 $(() => {
   authEvents.addHandlers()
 })
+
+let empty = ''
+let board = [empty, empty, empty, empty, empty, empty, empty, empty, empty]
+
 const player1 = 'X'
 const player2 = 'O'
 let currentPlayer = player1
 
-// On document ready
-
-$('.box').on('click', function () {
-  $(this).html(currentPlayer)
-  // console.log($('#modalNameInput').val())
-})
+const clickValue = function () {
+  $(this).html(currentPlayer = currentPlayer === player1 ? player2 : player1)
+  $(this).val(currentPlayer)
+  $(this).unbind()
+  console.log($(this).val())
+  console.log($(this))
+  $(this).val($(this))
+  return clickValue
+}
+$('.box').on('click', clickValue())
