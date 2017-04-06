@@ -40,18 +40,19 @@ const onChangePassword = function (event) {
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
 }
-const assignOne = function (event) {
-  console.log('assign one ran')
-  board[1] = currentPlayer
-  console.log(board[1])
-}
+// const newGame = function () {
+//   $('#newGame').on('click', function () {
+//     $('.box').text('')
+//     console.log('new game clicked')
+//   })
+// }
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
-  $('#boxOne').on('click', assignOne)
+  // $('#newGame').on('click', newGame)
 }
 
 module.exports = {

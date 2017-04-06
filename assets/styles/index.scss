@@ -4,10 +4,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 body {
   background-color: #4e4e4e;
 }
+
 legend {
   color: white;
 }
-.welcome{
+
+.welcome {
   font-family: 'Londrina Shadow', cursive;
   text-align: center;
   font-size: 45px;
@@ -15,16 +17,23 @@ legend {
   margin: 40px 0 0 0;
   clear: both;
 }
-.credentials{
+
+.credentials {
   border: 1px solid #000;
   color: #000;
   float: left;
 }
-.game-board{
+
+.newGame{
+  border: 1px solid #fff;
+}
+
+.game-board {
   margin: auto;
   clear: both;
 }
-.box{
+
+.box {
   height: 200px;
   text-align: center;
   font-size: 120px;
@@ -34,7 +43,8 @@ legend {
   margin-right: auto;
   opacity: 0.6;
 }
-.boxOne{
+
+.boxOne {
   border-right: 3px solid #fff;
   border-bottom: 3px solid #fff;
   border-top-left-radius: 12px;
@@ -42,6 +52,7 @@ legend {
   float: left;
   margin-left: 200px;
 }
+
 .boxTwo{
   border-right: 3px solid #fff;
   border-bottom: 3px solid #fff;
