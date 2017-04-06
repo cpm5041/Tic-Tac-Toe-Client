@@ -11,6 +11,18 @@ let gameCellIds = [
   'box-7',
   'box-8'
 ]
+const gameObject = {
+  'game': {
+    'id': 3,
+    'cells': ['', '', '', '', '', '', '', '', ''],
+    'over': false,
+    'player_x': {
+      'id': 1,
+      'email': 'and@and.com'
+    },
+    'player_o': null
+  }
+}
 // let boardIndex =
 const player1 = 'X'
 const player2 = 'O'
@@ -26,15 +38,21 @@ const setUpGameboard = function () {
 }
 
 const updateCell = function () {
-  console.log('updateCell ran!')
+  console.log(currentPlayer)
+  const id = this.id
+  console.log('this element id = ' + id)
+  const index1 = id.split('-')
+  const index = index1[1]
+  console.log(index)
+  gameObject.game.cells[index] = currentPlayer
+  console.log('gameObject', gameObject)
 }
 
 const clickValue = function () {
   $(this).html(currentPlayer = currentPlayer === player1 ? player2 : player1)
   $(this).val(currentPlayer)
   $(this).unbind()
-  console.log($(this).val())
-  console.log($(this))
+  // console.log($(this))
   $(this).val($(this))
   return clickValue
 }
