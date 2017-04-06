@@ -3,6 +3,7 @@
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const authEvents = require('./auth/events.js')
+const gameBoardLogic = require('./gameBoardLogic.js')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -15,34 +16,5 @@ $(() => {
 require('./example')
 $(() => {
   authEvents.addHandlers()
+  gameBoardLogic.setUpGameboard()
 })
-
-let empty = ''
-let board = [
-  empty,
-  empty,
-  empty,
-  empty,
-  empty,
-  empty,
-  empty,
-  empty,
-  empty
-]
-// let boardIndex =
-const player1 = 'X'
-const player2 = 'O'
-let currentPlayer = player1
-
-const clickValue = function () {
-  $(this).html(currentPlayer = currentPlayer === player1 ? player2 : player1)
-  $(this).val(currentPlayer)
-  $(this).unbind()
-  console.log($(this).val())
-  console.log($(this))
-  $(this).val($(this))
-  return clickValue
-}
-$('.box').on('click', clickValue())
-
-// add event listener, it was called back
