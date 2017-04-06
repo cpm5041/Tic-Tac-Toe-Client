@@ -74,11 +74,11 @@ const clickValue = function () {
   return clickValue
 }
 $('.box').on('click', clickValue())
-$('.box').on('click', function (){
-  $('#newGame').on('click', function () {
-      $('.box').text('')
-      console.log('new game clicked')
-})
+// $('.box').on('click', function (){
+//   $('#newGame').on('click', function () {
+//       $('.box').text('')
+//       console.log('new game clicked')
+// })
 
 // add event listener, it was called back
 module.exports = {
