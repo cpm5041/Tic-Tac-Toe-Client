@@ -20,6 +20,7 @@ legend {
 }
 
 .credentials {
+  font-family: 'Permanent Marker', cursive;
   border: 1px solid #000;
   color: #000;
   float: left;
@@ -27,6 +28,10 @@ legend {
 
 .newGame{
   border: 1px solid #fff;
+}
+
+.signOut {
+  clear:both;
 }
 
 .game-board {

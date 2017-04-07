@@ -38,6 +38,14 @@ const changePasswordSuccess = (data) => {
 const changePasswordFailure = (error) => {
   console.error('Change password failure ran. data: ', error)
 }
+const createSuccess = (data) => {
+  console.log(data)
+  store.game = data.game
+}
+
+const createFailure = (error) => {
+  console.error('error! ' + error)
+}
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -46,5 +54,7 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  createSuccess,
+  createFailure
 }

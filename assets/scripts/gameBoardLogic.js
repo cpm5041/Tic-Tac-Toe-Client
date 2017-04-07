@@ -28,6 +28,7 @@ const player1 = 'X'
 const player2 = 'O'
 let winner = null
 let currentPlayer = player1
+let gameOver = false
 
 const setUpGameboard = function () {
   for (let i = 0; i < gameCellIds.length; i++) {
@@ -60,33 +61,9 @@ const checkForWinner = function () {
       // change the header to show the winner
       $('.welcome').text(winner + ' is the winner!')
       $('.box').off('click')
-      return winner
+      return
     }
   })
-}
-const checkVictory = function (currentPlayer, board, numOfMoves, gameOver) {
-// Check Victory is the function
- console.log(board)
- if (
-   // First row check
-   (bCheck[0] === currentPlayer && bCheck[1] === currentPlayer && bCheck[2] === currentPlayer) ||
-   // Second row check
-   (bCheck[3] === currentPlayer && bCheck[4] === currentPlayer && bCheck[5] === currentPlayer) ||
-    // Third row check
-   (bCheck[6] === currentPlayer && bCheck[7] === currentPlayer && bCheck[8] === currentPlayer) ||
-   // First column check
-   (bCheck[0] === currentPlayer && bCheck[3] === currentPlayer && bCheck[6] === currentPlayer) ||
-   // Second column check
-   (bCheck[1] === currentPlayer && bCheck[4] === currentPlayer && bCheck[7] === currentPlayer) ||
-    // Third column check
-   (bCheck[2] === currentPlayer && bCheck[5] === currentPlayer && bCheck[8] === currentPlayer) ||
-   // Downward Diag check
-   (bCheck[0] === currentPlayer && bCheck[4] === currentPlayer && bCheck[8] === currentPlayer) ||
-    // Upward Diag check
-   (bCheck[6] === currentPlayer && bCheck[4] === currentPlayer && bCheck[2] === currentPlayer)) {
-   // add score to global counter
-   console.log('victory')
- }
 }
 
 let bCheck = []
@@ -118,7 +95,6 @@ const updateCell = function () {
 
 const clickValue = function () {
   if (this.innerHTML === '&nbsp;') {
-    // $(this).text('xxx')
     $(this).html(currentPlayer = currentPlayer === player1 ? player2 : player1)
   }
 }

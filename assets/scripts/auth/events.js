@@ -41,6 +41,15 @@ const onChangePassword = function (event) {
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
 }
+const onCreate = function (event) {
+  event.preventDefault()
+  console.log('Create ran')
+  $('.box').html('&nbsp;')
+  const data = getFormFields(event.target)
+  api.createGame(data)
+    .then(ui.createSuccess)
+    .catch(ui.createFailure)
+}
 // const newGame = function () {
 //   $('#newGame').on('click', function () {
 //     $('.box').text('')
@@ -54,9 +63,11 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('.box').on('click', game.clickValue)
+  $('#create').on('click', onCreate)
   // $('#newGame').on('click', newGame)
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onCreate
 }
