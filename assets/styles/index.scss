@@ -2,19 +2,21 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 body {
-  background-color: #4e4e4e;
+  // background-color: #4e4e4e;
+  background: url('/assets/images/wolf.jpg');
+  background-size: cover;
 }
 
 legend {
-  color: white;
+  color: #fff;
 }
 
 .welcome {
-  font-family: 'Londrina Shadow', cursive;
+  font-family: 'Nothing You Could Do', cursive;
   text-align: center;
-  font-size: 45px;
-  color: #aaaaaa;
-  margin: 40px 0 0 0;
+  font-size: 55px;
+  color: white;
+  margin: 40px 0 0;
   clear: both;
 }
 
@@ -34,19 +36,26 @@ legend {
 }
 
 .box {
-  height: 200px;
+  height: 220px;
   text-align: center;
-  font-size: 120px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 170px;
   width: 20%;
-  background-color: red;
+  background-color: white;
   margin-left: auto;
   margin-right: auto;
-  opacity: 0.6;
+  opacity: .3;
+}
+
+.dropdown {
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+  background-color: white;
 }
 
 .boxOne {
-  border-right: 3px solid #fff;
-  border-bottom: 3px solid #fff;
+  border-right: 3px solid #000;
+  border-bottom: 3px solid #000;
   border-top-left-radius: 12px;
   text-align: center;
   float: left;
@@ -54,43 +63,43 @@ legend {
 }
 
 .boxTwo{
-  border-right: 3px solid #fff;
-  border-bottom: 3px solid #fff;
-  border-left: 3px solid #fff;
+  border-right: 3px solid #000;
+  border-bottom: 3px solid #000;
+  border-left: 3px solid #000;
   text-align: center;
   float: left;
 }
 .boxThree{
-  border-bottom: 3px solid #fff;
-  border-left: 3px solid #fff;
+  border-bottom: 3px solid #000;
+  border-left: 3px solid #000;
   text-align: center;
   float: left;
   border-top-right-radius: 12px;
 }
 .boxFour{
-  border-right: 3px solid #fff;
-  border-bottom: 3px solid #fff;
-  border-top: 3px solid #fff;
+  border-right: 3px solid #000;
+  border-bottom: 3px solid #000;
+  border-top: 3px solid #000;
   text-align: center;
   float: left;
   clear: both;
   margin-left: 200px;
 }
 .boxFive{
-  border: 3px solid #fff;
+  border: 3px solid #000;
   text-align: center;
   float: left;
 }
 .boxSix{
-  border-bottom: 3px solid #fff;
-  border-left: 3px solid #fff;
-  border-top: 3px solid #fff;
+  border-bottom: 3px solid #000;
+  border-left: 3px solid #000;
+  border-top: 3px solid #000;
   text-align: center;
   float: left;
 }
 .boxSeven{
-  border-right: 3px solid #fff;
-  border-top: 3px solid #fff;
+  border-right: 3px solid #000;
+  border-top: 3px solid #000;
   border-bottom-left-radius: 12px;
   text-align: center;
   float: left;
@@ -98,15 +107,15 @@ legend {
   margin-left: 200px;
 }
 .boxEight{
-  border-right: 3px solid #fff;
-  border-top: 3px solid #fff;
-  border-left: 3px solid #fff;
+  border-right: 3px solid #000;
+  border-top: 3px solid #000;
+  border-left: 3px solid #000;
   text-align: center;
   float: left;
 }
 .boxNine{
-  border-top: 3px solid #fff;
-  border-left: 3px solid #fff;
+  border-top: 3px solid #000;
+  border-left: 3px solid #000;
   border-bottom-right-radius: 12px;
   text-align: center;
   float: left;

@@ -8,9 +8,23 @@
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
-
   <body class="container-fluid">
-      <form id="sign-up" class="credentials">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Sign Up</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Sign In</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Sign Out</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Change Password</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- <form id="sign-up" class="credentials">
         <fieldset>
           <legend>Sign up to play!</legend>
           <input type="text" name="credentials[email]" value="" placeholder="email">
@@ -40,8 +54,8 @@
           <input type="password" name="passwords[new]" value="" placeholder="New Password">
           <input class="credentials" type="submit" name="submit" value="Change Password">
         </fieldset>
-      </form>
-  <h1 class='welcome'>Welcome to Tic-Tac-Toe!</h1>
+      </form> -->
+  <h1 class='welcome'>Play some Tic-Tac-Toe!</h1>
   <!-- <h2 id='#showWinner'>You win mothafucka!</h2> -->
   <div style="text-align:center;"><button class='newGame' id="newGame">New game!</button></div>
   <br>

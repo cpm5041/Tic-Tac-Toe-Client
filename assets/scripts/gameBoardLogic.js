@@ -78,13 +78,13 @@ const updateCell = function () {
 }
 const clickValue = function () {
   $(this).html(currentPlayer = currentPlayer === player1 ? player2 : player1)
-  $(this).unbind()
+  $(this).off()
   return clickValue
 }
 const newGame = function () {
   $('.box').text('')
   console.log('new game clicked')
-  // $(this).unbind()
+  // $(this).on()
   return newGame
 }
 $('.box').on('click', clickValue())
