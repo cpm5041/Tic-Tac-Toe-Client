@@ -23,12 +23,10 @@ const gameObject = {
     'player_o': null
   }
 }
-// let boardIndex =
 const player1 = 'X'
 const player2 = 'O'
 let winner = null
 let currentPlayer = player1
-let gameOver = false
 
 const setUpGameboard = function () {
   for (let i = 0; i < gameCellIds.length; i++) {
@@ -62,6 +60,12 @@ const checkForWinner = function () {
       $('.welcome').text(winner + ' is the winner!')
       $('.box').off('click')
       return
+    } else {
+      if (bCheck.every(x => x !== '&nbsp;')) {
+        $('.welcome').text('We have a draw!')
+        draw = true
+        return
+      }
     }
   })
 }

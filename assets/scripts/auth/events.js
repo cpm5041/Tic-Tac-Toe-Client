@@ -45,6 +45,7 @@ const onCreate = function (event) {
   event.preventDefault()
   console.log('Create ran')
   $('.box').html('&nbsp;')
+  // let currentPlayer = 'X'
   const data = getFormFields(event.target)
   api.createGame(data)
     .then(ui.createSuccess)
