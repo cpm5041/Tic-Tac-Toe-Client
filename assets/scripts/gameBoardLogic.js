@@ -37,7 +37,9 @@ const setUpGameboard = function () {
   }
 }
 const checkForWinner = function () {
+  // create array of winning index combinations
   const winningLines = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+// run the forEach method on each line of the array
   winningLines.forEach(function (line) {
     const cell1 = line[0]
     const cell2 = line[1]
@@ -52,10 +54,15 @@ const checkForWinner = function () {
 let bCheck = []
 
 const updateCell = function () {
+  // grab elementID of the box clicked
   const id = this.id
+  // parse the ID since it is a string
   const index1 = id.split('-')
+  // grab the second value in the new array which will be used as an index
   const index = index1[1]
+  // the index of the cell we click will be returned as current player (x or o)
   gameObject.game.cells[index] = currentPlayer
+  // fill the board check array with values that are being clicked dynamically
   bCheck = [
     $('#box-0').html(),
     $('#box-1').html(),
@@ -66,6 +73,7 @@ const updateCell = function () {
     $('#box-6').html(),
     $('#box-7').html(),
     $('#box-8').html()]
+    // run the check for winner function
   checkForWinner()
 }
 const clickValue = function () {
@@ -73,12 +81,14 @@ const clickValue = function () {
   $(this).unbind()
   return clickValue
 }
+const newGame = function () {
+  $('.box').text('')
+  console.log('new game clicked')
+  // $(this).unbind()
+  return newGame
+}
 $('.box').on('click', clickValue())
-// $('.box').on('click', function (){
-//   $('#newGame').on('click', function () {
-//       $('.box').text('')
-//       console.log('new game clicked')
-// })
+$('#newGame').on('click', newGame())
 
 // add event listener, it was called back
 module.exports = {
