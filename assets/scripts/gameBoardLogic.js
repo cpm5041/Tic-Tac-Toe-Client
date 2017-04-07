@@ -1,6 +1,6 @@
 'use strict'
 
-let gameCellIds = [
+const gameCellIds = [
   'box-0',
   'box-1',
   'box-2',
@@ -50,18 +50,43 @@ const checkForWinner = function () {
   ]
   // run the forEach method on each line of the array
   winningLines.forEach(function (line) {
-  // check cells 1, 2, 3 for each of the winning arrays to see if any match
+    // check cells 1, 2, 3 for each of the winning arrays to see if any match
     const cell1 = line[0]
     const cell2 = line[1]
     const cell3 = line[2]
-  // if current player (x or o) matches all three, assign them as a winner
+    // if current player (x or o) matches all three, assign them as a winner
     if (currentPlayer === bCheck[cell1] && bCheck[cell1] === bCheck[cell2] && bCheck[cell2] === bCheck[cell3]) {
       winner = currentPlayer
-    // change the header to show the winner
+      // change the header to show the winner
       $('.welcome').text(winner + ' is the winner!')
-      console.log('winner')
+      $('.box').off('click')
+      return winner
     }
   })
+}
+const checkVictory = function (currentPlayer, board, numOfMoves, gameOver) {
+// Check Victory is the function
+ console.log(board)
+ if (
+   // First row check
+   (bCheck[0] === currentPlayer && bCheck[1] === currentPlayer && bCheck[2] === currentPlayer) ||
+   // Second row check
+   (bCheck[3] === currentPlayer && bCheck[4] === currentPlayer && bCheck[5] === currentPlayer) ||
+    // Third row check
+   (bCheck[6] === currentPlayer && bCheck[7] === currentPlayer && bCheck[8] === currentPlayer) ||
+   // First column check
+   (bCheck[0] === currentPlayer && bCheck[3] === currentPlayer && bCheck[6] === currentPlayer) ||
+   // Second column check
+   (bCheck[1] === currentPlayer && bCheck[4] === currentPlayer && bCheck[7] === currentPlayer) ||
+    // Third column check
+   (bCheck[2] === currentPlayer && bCheck[5] === currentPlayer && bCheck[8] === currentPlayer) ||
+   // Downward Diag check
+   (bCheck[0] === currentPlayer && bCheck[4] === currentPlayer && bCheck[8] === currentPlayer) ||
+    // Upward Diag check
+   (bCheck[6] === currentPlayer && bCheck[4] === currentPlayer && bCheck[2] === currentPlayer)) {
+   // add score to global counter
+   console.log('victory')
+ }
 }
 
 let bCheck = []
@@ -90,10 +115,12 @@ const updateCell = function () {
   // run the check for winner function
   checkForWinner()
 }
+
 const clickValue = function () {
-  $(this).html(currentPlayer = currentPlayer === player1 ? player2 : player1)
-  $(this).off()
-  return clickValue
+  if (this.innerHTML === '&nbsp;') {
+    // $(this).text('xxx')
+    $(this).html(currentPlayer = currentPlayer === player1 ? player2 : player1)
+  }
 }
 // const newGame = function () {
 //   $('.box').text('')
@@ -101,10 +128,9 @@ const clickValue = function () {
 //   // $(this).on()
 //   return newGame
 // }
-$('.box').on('click', clickValue())
 // $('#newGame').on('click', newGame())
 
-// add event listener, it was called back
 module.exports = {
-  setUpGameboard
+  setUpGameboard,
+  clickValue
 }

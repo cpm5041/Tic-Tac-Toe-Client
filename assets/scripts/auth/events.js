@@ -4,6 +4,7 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
 const ui = require('./ui')
+const game = require('../gameBoardLogic.js')
 
 const onSignUp = function (event) {
   // this here is pointing to event.target from last lesson
@@ -52,6 +53,7 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
+  $('.box').on('click', game.clickValue)
   // $('#newGame').on('click', newGame)
 }
 
