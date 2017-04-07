@@ -38,15 +38,28 @@ const setUpGameboard = function () {
 }
 const checkForWinner = function () {
   // create array of winning index combinations
-  const winningLines = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
-// run the forEach method on each line of the array
+  const winningLines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+  ]
+  // run the forEach method on each line of the array
   winningLines.forEach(function (line) {
+  // check cells 1, 2, 3 for each of the winning arrays to see if any match
     const cell1 = line[0]
     const cell2 = line[1]
     const cell3 = line[2]
+  // if current player (x or o) matches all three, assign them as a winner
     if (currentPlayer === bCheck[cell1] && bCheck[cell1] === bCheck[cell2] && bCheck[cell2] === bCheck[cell3]) {
       winner = currentPlayer
-      console.log('Winner!')
+    // change the header to show the winner
+      $('.welcome').text(winner + ' is the winner!')
+      console.log('winner')
     }
   })
 }
@@ -72,8 +85,9 @@ const updateCell = function () {
     $('#box-5').html(),
     $('#box-6').html(),
     $('#box-7').html(),
-    $('#box-8').html()]
-    // run the check for winner function
+    $('#box-8').html()
+  ]
+  // run the check for winner function
   checkForWinner()
 }
 const clickValue = function () {
@@ -81,14 +95,14 @@ const clickValue = function () {
   $(this).off()
   return clickValue
 }
-const newGame = function () {
-  $('.box').text('')
-  console.log('new game clicked')
-  // $(this).on()
-  return newGame
-}
+// const newGame = function () {
+//   $('.box').text('')
+//   console.log('new game clicked')
+//   // $(this).on()
+//   return newGame
+// }
 $('.box').on('click', clickValue())
-$('#newGame').on('click', newGame())
+// $('#newGame').on('click', newGame())
 
 // add event listener, it was called back
 module.exports = {
