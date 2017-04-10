@@ -19,6 +19,13 @@ legend {
   clear: both;
 }
 
+.stats {
+  font-family: 'Permanent Marker', cursive;
+  border: 1px solid #000;
+  color: #000;
+  float: left;
+}
+
 .credentials {
   font-family: 'Permanent Marker', cursive;
   border: 1px solid #000;
@@ -30,11 +37,6 @@ legend {
   font-family: 'Permanent Marker', cursive;
   border: 1px solid #000;
   color: #000;
-}
-
-.signOut {
-  clear:both;
-  margin-right: 395px;
 }
 
 .game-board {

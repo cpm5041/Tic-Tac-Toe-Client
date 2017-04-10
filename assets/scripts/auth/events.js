@@ -45,18 +45,31 @@ const onCreate = function (event) {
   event.preventDefault()
   console.log('Create ran')
   $('.box').html('&nbsp;')
-  // let currentPlayer = 'X'
+  $('.box').on('click', game.clickValue)
+  $('.welcome').text('Play some Tic-Tac-Toe!')
+  // game.currentPlayer = game.player1
   const data = getFormFields(event.target)
   api.createGame(data)
     .then(ui.createSuccess)
     .catch(ui.createFailure)
 }
-// const newGame = function () {
-//   $('#newGame').on('click', function () {
-//     $('.box').text('')
-//     console.log('new game clicked')
-//   })
-// }
+
+const onSubmitMove = function (event) {
+  event.preventDefault()
+  console.log('onSubmitMove ran')
+  const data = getFormFields(event.target)
+  console.log(this)
+  console.log(event.target)
+  api.submitMove(data)
+    .then(ui.submitSuccess)
+    .catch(ui.submitFailure)
+}
+const onGetIndex = function (event) {
+  event.preventDefault()
+  api.indexGame()
+    .then(ui.indexSuccess)
+    .catch(ui.indexFailure)
+}
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
@@ -65,7 +78,8 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('.box').on('click', game.clickValue)
   $('#create').on('click', onCreate)
-  // $('#newGame').on('click', newGame)
+  $('#game-info').on('submit', onSubmitMove)
+  $('#game-statistics').on('submit', onGetIndex)
 }
 
 module.exports = {

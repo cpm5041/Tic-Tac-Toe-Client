@@ -63,7 +63,6 @@ const checkForWinner = function () {
     } else {
       if (bCheck.every(x => x !== '&nbsp;')) {
         $('.welcome').text('We have a draw!')
-        draw = true
         return
       }
     }
@@ -93,6 +92,7 @@ const updateCell = function () {
     $('#box-7').html(),
     $('#box-8').html()
   ]
+  $('#game-info').submit()
   // run the check for winner function
   checkForWinner()
 }
@@ -112,5 +112,7 @@ const clickValue = function () {
 
 module.exports = {
   setUpGameboard,
-  clickValue
+  clickValue,
+  player1,
+  currentPlayer
 }

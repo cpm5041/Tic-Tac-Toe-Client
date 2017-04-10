@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const game = require('../gameBoardLogic.js')
 
 const signUpSuccess = (data) => {
   console.log(data)
@@ -40,11 +41,23 @@ const changePasswordFailure = (error) => {
 }
 const createSuccess = (data) => {
   console.log(data)
+  $('.box').on('click')
   store.game = data.game
+  game.currentPlayer = game.player1
+  console.log('current player', game.currentPlayer)
 }
 
 const createFailure = (error) => {
   console.error('error! ' + error)
+}
+const submitSuccess = (data) => {
+  console.log('submitSuccess worked!')
+  console.log(data)
+  // store whatver you get back from the request so you can use it later
+}
+
+const submitFailure = (error) => {
+  console.error('Submit failure ran. data: ', error)
 }
 module.exports = {
   signUpSuccess,
@@ -56,5 +69,7 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   createSuccess,
-  createFailure
+  createFailure,
+  submitSuccess,
+  submitFailure
 }
