@@ -16,6 +16,7 @@ const signInSuccess = (data) => {
   console.log('sign in success ran. data: ', data)
   $('.welcome').text('Play some Tic-Tac-Toe!')
   $('.userNotification').text('Sign-in Successful! Lets Play!')
+  $('.game-board').show()
   store.user = data.user
 }
 

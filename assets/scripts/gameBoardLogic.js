@@ -29,6 +29,7 @@ let winner = null
 let currentPlayer = player1
 
 const setUpGameboard = function () {
+  $('.game-board').hide()
   for (let i = 0; i < gameCellIds.length; i++) {
     const elementId = gameCellIds[i]
     const element = document.getElementById(elementId)
