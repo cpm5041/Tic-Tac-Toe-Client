@@ -7,8 +7,8 @@ const config = {
 }
 // const config = {
 //   apiOrigins: {
-//   //  production: 'https://ga-wdi-boston.herokuapp.com'
-//    production: 'https://aqueous-atoll-85096.herokuapp.com/'
+//     development: 'https://localhost:4741',
+//     production: 'https://aqueous-atoll-85096.herokuapp.com/'
 //   }
 // }
 

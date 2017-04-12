@@ -28,14 +28,12 @@ const onSignIn = function (event) {
 }
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('Sign out ran')
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
 }
 const onChangePassword = function (event) {
   event.preventDefault()
-  console.log('Change password ran')
   const data = getFormFields(this)
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
@@ -43,10 +41,8 @@ const onChangePassword = function (event) {
 }
 const onCreate = function (event) {
   event.preventDefault()
-  console.log('Create ran')
   $('.box').html('&nbsp;')
   $('.box').on('click', game.clickValue)
-  $('.welcome').text('Play some Tic-Tac-Toe!')
   // game.currentPlayer = game.player1
   const data = getFormFields(event.target)
   api.createGame(data)

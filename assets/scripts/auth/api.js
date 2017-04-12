@@ -49,7 +49,7 @@ const createGame = (data) => {
 const submitMove = (data) => {
   console.log(data)
   return $.ajax({
-    url: config.apiOrigin + '/games/' + store.user.id,
+    url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
