@@ -44,7 +44,31 @@ legend {
 .credentials {
   font-family: 'Permanent Marker', cursive;
   border: 1px solid #000;
+  text-align: center;
   color: #000;
+  float: left;
+}
+
+.signOut {
+  font-family: 'Permanent Marker', cursive;
+  border: 1px solid #000;
+  color: #000;
+  margin-left: 600px;
+  clear: both;
+  float: left;
+}
+.pw {
+  font-family: 'Permanent Marker', cursive;
+  border: 1px solid #000;
+  color: #000;
+  float: left;
+}
+.sign-up {
+  font-family: 'Permanent Marker', cursive;
+  border: 1px solid #000;
+  color: #000;
+  margin-left: 400px;
+  clear: both;
   float: left;
 }
 
@@ -55,7 +79,7 @@ legend {
 }
 
 .game-board {
-  margin: auto;
+  margin-left: 275px;
   clear: both;
   display: none;
 }

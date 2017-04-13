@@ -30,6 +30,16 @@ let currentPlayer = player1
 
 const setUpGameboard = function () {
   $('.game-board').hide()
+  $('.newGame').hide()
+  $('.signOut').hide()
+  $('.pw').hide()
+  for (let i = 0; i < gameCellIds.length; i++) {
+    const elementId = gameCellIds[i]
+    const element = document.getElementById(elementId)
+    element.addEventListener('click', updateCell)
+  }
+}
+const resetBoard = function () {
   for (let i = 0; i < gameCellIds.length; i++) {
     const elementId = gameCellIds[i]
     const element = document.getElementById(elementId)
@@ -60,6 +70,7 @@ const checkForWinner = function () {
       // change the header to show the winner
       $('.welcome').text(winner + ' is the winner!')
       $('.box').off('click')
+      console.log('it rannn')
       return
     } else {
       if (bCheck.every(x => x !== '&nbsp;')) {
@@ -95,6 +106,7 @@ const updateCell = function () {
   ]
   $('#game-info').submit()
   // run the check for winner function
+  console.log('about to check for winner')
   checkForWinner()
 }
 
@@ -103,17 +115,14 @@ const clickValue = function () {
     $(this).html(currentPlayer = currentPlayer === player1 ? player2 : player1)
   }
 }
-// const newGame = function () {
-//   $('.box').text('')
-//   console.log('new game clicked')
-//   // $(this).on()
-//   return newGame
-// }
-// $('#newGame').on('click', newGame())
 
 module.exports = {
   setUpGameboard,
   clickValue,
   player1,
-  currentPlayer
+  currentPlayer,
+  gameCellIds,
+  resetBoard,
+  updateCell,
+  checkForWinner
 }

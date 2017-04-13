@@ -17,6 +17,11 @@ const signInSuccess = (data) => {
   $('.welcome').text('Play some Tic-Tac-Toe!')
   $('.userNotification').text('Sign-in Successful! Lets Play!')
   $('.game-board').show()
+  $('.newGame').show()
+  $('.signOut').show()
+  $('.pw').show()
+  $('.sign-up').hide()
+  $('#sign-in').hide()
   store.user = data.user
 }
 
@@ -26,11 +31,10 @@ const signInFailure = (error) => {
 }
 const signOutSuccess = () => {
   $('.userNotification').text('Signed out!')
+  $('#sign-in').show()
   console.log('store is: ', store)
   store.user = null
   console.log('store is: ', store)
-  // store whatver you get back from the request so you can use it later
-  // store.user = data.user
 }
 
 const signOutFailure = (error) => {
@@ -48,11 +52,12 @@ const changePasswordFailure = (error) => {
   console.error('Change password failure ran. data: ', error)
 }
 const createSuccess = (data) => {
-  console.log(data)
   $('.welcome').text('Play some Tic-Tac-Toe!')
-  // $('.box').on('click')
+  $('.box').html('&nbsp;')
+  $('.box').on('click', game.clickValue)
+  console.log('game created')
+  console.log(data)
   store.game = data.game
-  game.currentPlayer = game.player1
 }
 
 const createFailure = (error) => {

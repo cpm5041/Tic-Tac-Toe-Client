@@ -41,8 +41,8 @@ const onChangePassword = function (event) {
 }
 const onCreate = function (event) {
   event.preventDefault()
-  $('.box').html('&nbsp;')
-  $('.box').on('click', game.clickValue)
+  // $('.box').html('&nbsp;')
+  // $('.box').on('click', game.clickValue)
   // game.currentPlayer = game.player1
   const data = getFormFields(event.target)
   api.createGame(data)
