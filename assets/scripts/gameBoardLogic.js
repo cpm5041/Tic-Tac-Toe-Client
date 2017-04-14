@@ -36,16 +36,16 @@ const setUpGameboard = function () {
   for (let i = 0; i < gameCellIds.length; i++) {
     const elementId = gameCellIds[i]
     const element = document.getElementById(elementId)
-    element.addEventListener('click', updateCell)
+    $(element).on('click', clickValue)
   }
 }
-const resetBoard = function () {
-  for (let i = 0; i < gameCellIds.length; i++) {
-    const elementId = gameCellIds[i]
-    const element = document.getElementById(elementId)
-    element.addEventListener('click', updateCell)
-  }
-}
+// const resetBoard = function () {
+//   for (let i = 0; i < gameCellIds.length; i++) {
+//     const elementId = gameCellIds[i]
+//     const element = document.getElementById(elementId)
+//     element.addEventListener('click', updateCell)
+//   }
+// }
 const checkForWinner = function () {
   // create array of winning index combinations
   const winningLines = [
@@ -70,7 +70,7 @@ const checkForWinner = function () {
       // change the header to show the winner
       $('.welcome').text(winner + ' is the winner!')
       $('.box').off('click')
-      console.log('it rannn')
+      console.log('winner rannn')
       return
     } else {
       if (bCheck.every(x => x !== '&nbsp;')) {
@@ -83,9 +83,9 @@ const checkForWinner = function () {
 
 let bCheck = []
 
-const updateCell = function () {
+const updateCell = function (cell) {
   // grab elementID of the box clicked
-  const id = this.id
+  const id = cell.id
   // parse the ID since it is a string
   const index1 = id.split('-')
   // grab the second value in the new array which will be used as an index
@@ -110,9 +110,10 @@ const updateCell = function () {
   checkForWinner()
 }
 
-const clickValue = function () {
-  if (this.innerHTML === '&nbsp;') {
+const clickValue = function (e) {
+  if (e.target.innerHTML === '&nbsp;') {
     $(this).html(currentPlayer = currentPlayer === player1 ? player2 : player1)
+    updateCell(e.target)
   }
 }
 
@@ -122,7 +123,6 @@ module.exports = {
   player1,
   currentPlayer,
   gameCellIds,
-  resetBoard,
   updateCell,
   checkForWinner
 }

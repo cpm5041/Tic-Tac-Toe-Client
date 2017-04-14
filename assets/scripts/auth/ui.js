@@ -53,11 +53,13 @@ const changePasswordFailure = (error) => {
 }
 const createSuccess = (data) => {
   $('.welcome').text('Play some Tic-Tac-Toe!')
+  $('.box').text('&nbsp;')
   $('.box').html('&nbsp;')
   $('.box').on('click', game.clickValue)
   console.log('game created')
   console.log(data)
-  store.game = data.game
+  store.games = data.games
+  console.log(data.games)
 }
 
 const createFailure = (error) => {
