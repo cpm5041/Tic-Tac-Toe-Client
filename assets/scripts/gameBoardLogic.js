@@ -2,7 +2,7 @@
 
 // const api = require('../auth/api')
 // const ui = require('../auth/ui')
-// const events = require('../auth/events.js')
+const events = require('./auth/events.js')
 
 const gameCellIds = [
   'box-0',
@@ -74,11 +74,26 @@ const checkForWinner = function () {
       // change the header to show the winner
       $('.welcome').text(winner + ' is the winner!')
       $('.box').off('click')
-      console.log('winner rannn')
+      $('#game_over_form').val('true')
+      const player = $('#move_marker_form').val()
+      const index = $('#index_form').val()
+      console.log(index)
+      console.log(player)
+      let data = {
+        'game': {
+          'cell': {
+            'index': index,
+            'value': player
+          },
+          'over': true
+        }
+      }
+      events.onSubmitMove(data)
       return
     } else {
       if (bCheck.every(x => x !== '&nbsp;')) {
         $('.welcome').text('We have a draw!')
+        $('#game_over_form').val('true')
         return
       }
     }
@@ -91,26 +106,25 @@ const updateCell = function (cell) {
   // grab elementID of the box clicked
   const id = cell.id
   // parse the ID since it is a string
-  const index1 = id.split('-')
   // grab the second value in the new array which will be used as an index
-  const index = index1[1]
+  const index = id
   // the index of the cell we click will be returned as current player (x or o)
   gameObject.game.cells[index] = currentPlayer
   // fill the board check array with values that are being clicked dynamically
   bCheck = [
-    $('#box-0').html(),
-    $('#box-1').html(),
-    $('#box-2').html(),
-    $('#box-3').html(),
-    $('#box-4').html(),
-    $('#box-5').html(),
-    $('#box-6').html(),
-    $('#box-7').html(),
-    $('#box-8').html()
+    $('#0').html(),
+    $('#1').html(),
+    $('#2').html(),
+    $('#3').html(),
+    $('#4').html(),
+    $('#5').html(),
+    $('#6').html(),
+    $('#7').html(),
+    $('#8').html()
   ]
-  $('#game-info').submit()
+  // $('#game-info').submit()
+  $('#index_form').val(index)
   // run the check for winner function
-  console.log('about to check for winner')
   checkForWinner()
 }
 
@@ -118,9 +132,12 @@ const clickValue = function (e) {
   if (e.target.innerHTML === '&nbsp;') {
     $(this).html(currentPlayer = currentPlayer === player1 ? player2 : player1)
     updateCell(e.target)
+    $('#game-info').submit()
+    console.log('form was submitted')
   } $('#move_marker_form').val(currentPlayer)
-  $('#index_form').val(+$(this).attr('id'))
-  console.log($(this).attr('id'))
+
+  // $('#index_form').val(index)
+  // console.log($(this).attr('id'))
 }
 
 module.exports = {

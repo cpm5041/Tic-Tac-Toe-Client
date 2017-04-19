@@ -48,9 +48,23 @@ const onCreate = function (event) {
 }
 
 // send update of current gameboard (PATCH)
-const onSubmitMove = function (data) {
+const onSubmitMove = function (event) {
   event.preventDefault()
-  console.log('onSubmitMove ran')
+  const id = getFormFields(event.target)
+  const player = $('#move_marker_form').val()
+  const index = $('#index_form').val()
+  console.log(index)
+  console.log(player)
+  let data = {
+    'game': {
+      'cell': {
+        'index': index,
+        'value': player
+        //  'value': $('#index_form').text
+      },
+      'over': false
+    }
+  }
   api.submitMove(data)
     .then(ui.submitSuccess)
     .catch(ui.submitFailure)
@@ -69,7 +83,8 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('.box').on('click', game.clickValue)
   $('#create').on('click', onCreate)
-  $('.box').on('submit', onSubmitMove)
+  $('.box').on('click', onSubmitMove)
+  $('#game-info').on('submit', onSubmitMove)
   $('#game-statistics').on('submit', onGetIndex)
 }
 

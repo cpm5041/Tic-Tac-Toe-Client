@@ -59,16 +59,15 @@ const createSuccess = (data) => {
   $('.box').on('click', game.clickValue)
   console.log('game created')
   console.log(data)
-  store.games = data.games
-  console.log(data.games)
+  store.game = data.game
 }
 
 const createFailure = (error) => {
   console.error('error! ' + error)
 }
-const submitSuccess = (data) => {
+const submitSuccess = (id) => {
   console.log('submitSuccess worked!')
-  console.log(data)
+  console.log(id)
   // store whatver you get back from the request so you can use it later
 }
 

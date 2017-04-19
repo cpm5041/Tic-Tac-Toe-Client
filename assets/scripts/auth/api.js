@@ -48,9 +48,9 @@ const createGame = (data) => {
 }
 // update game cells with each move
 const submitMove = (data) => {
-  const game = store.game
+  // const game = store.game
   return $.ajax({
-    url: config.apiOrigin + '/games/' + game.id,
+    url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
