@@ -1,8 +1,9 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+
 body {
-  // background: url('https://i.imgur.com/Kae8lUv.jpg');
+  /*// background: url('https://i.imgur.com/Kae8lUv.jpg');*/
   background-size: cover;
 }
 
@@ -169,3 +170,96 @@ legend {
   text-align: center;
   float: left;
 }
+/*
+body {
+  background-color: #4e4e4e;
+}
+.welcome{
+  font-family: 'Londrina Shadow', cursive;
+  text-align: center;
+  font-size: 45px;
+  color: #aaaaaa;
+  margin: 20px 0 0 0;
+}
+.credentials{
+  color: white;
+  border: 1px solid #000;
+}
+.game-board{
+  margin-left: 300px;
+}
+.box{
+  height: 200px;
+  text-align: center;
+  width: 20%;
+  background-color: red;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.8;
+}
+.boxOne{
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  border-top-left-radius: 12px;
+  text-align: center;
+  float: left;
+  margin-left: 200px;
+}
+.boxTwo{
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  border-left: 3px solid #fff;
+  text-align: center;
+  float: left;
+}
+.boxThree{
+  border-bottom: 3px solid #fff;
+  border-left: 3px solid #fff;
+  text-align: center;
+  float: left;
+  border-top-right-radius: 12px;
+}
+.boxFour{
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  border-top: 3px solid #fff;
+  text-align: center;
+  float: left;
+  clear: both;
+  margin-left: 200px;
+}
+.boxFive{
+  border: 3px solid #fff;
+  text-align: center;
+  float: left;
+}
+.boxSix{
+  border-bottom: 3px solid #fff;
+  border-left: 3px solid #fff;
+  border-top: 3px solid #fff;
+  text-align: center;
+  float: left;
+}
+.boxSeven{
+  border-right: 3px solid #fff;
+  border-top: 3px solid #fff;
+  border-bottom-left-radius: 12px;
+  text-align: center;
+  float: left;
+  clear:both;
+  margin-left: 200px;
+}
+.boxEight{
+  border-right: 3px solid #fff;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+  text-align: center;
+  float: left;
+}
+.boxNine{
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+  border-bottom-right-radius: 12px;
+  text-align: center;
+  float: left;
+}*/

@@ -43,6 +43,7 @@ const signOutFailure = (error) => {
 }
 const changePasswordSuccess = (data) => {
   $('.userNotification').text('Password Changed!')
+  $('#sign-in').show()
   console.log('Change password worked!')
   // store whatver you get back from the request so you can use it later
 }

@@ -41,21 +41,16 @@ const onChangePassword = function (event) {
 }
 const onCreate = function (event) {
   event.preventDefault()
-  // $('.box').html('&nbsp;')
-  // $('.box').on('click', game.clickValue)
-  // game.currentPlayer = game.player1
   const data = getFormFields(event.target)
   api.createGame(data)
     .then(ui.createSuccess)
     .catch(ui.createFailure)
 }
 
-const onSubmitMove = function (event) {
+// send update of current gameboard (PATCH)
+const onSubmitMove = function (data) {
   event.preventDefault()
   console.log('onSubmitMove ran')
-  const data = getFormFields(event.target)
-  console.log(this)
-  console.log(event.target)
   api.submitMove(data)
     .then(ui.submitSuccess)
     .catch(ui.submitFailure)
@@ -74,11 +69,12 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('.box').on('click', game.clickValue)
   $('#create').on('click', onCreate)
-  $('#game-info').on('submit', onSubmitMove)
+  $('.box').on('submit', onSubmitMove)
   $('#game-statistics').on('submit', onGetIndex)
 }
 
 module.exports = {
   addHandlers,
-  onCreate
+  onCreate,
+  onSubmitMove
 }

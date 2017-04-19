@@ -1,5 +1,9 @@
 'use strict'
 
+// const api = require('../auth/api')
+// const ui = require('../auth/ui')
+// const events = require('../auth/events.js')
+
 const gameCellIds = [
   'box-0',
   'box-1',
