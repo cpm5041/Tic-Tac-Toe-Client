@@ -118,7 +118,9 @@ const clickValue = function (e) {
   if (e.target.innerHTML === '&nbsp;') {
     $(this).html(currentPlayer = currentPlayer === player1 ? player2 : player1)
     updateCell(e.target)
-  }
+  } $('#move_marker_form').val(currentPlayer)
+  $('#index_form').val(+$(this).attr('id'))
+  console.log($(this).attr('id'))
 }
 
 module.exports = {
