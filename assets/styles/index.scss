@@ -1,6 +1,7 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-
+@import url(https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Permanent+Marker);
+@import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah);
 
 body {
   /*// background: url('https://i.imgur.com/Kae8lUv.jpg');*/
@@ -12,7 +13,7 @@ legend {
 }
 
 .welcome {
-  font-family: 'Nothing You Could Do', cursive;
+  font-family: 'Permanent Marker', cursive;
   text-align: center;
   font-size: 55px;
   color: white;
@@ -106,7 +107,7 @@ legend {
 .boxOne {
   border-right: 3px solid #000;
   border-bottom: 3px solid #000;
-  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
   text-align: center;
   float: left;
   margin-left: 200px;
@@ -122,9 +123,9 @@ legend {
 .boxThree{
   border-bottom: 3px solid #000;
   border-left: 3px solid #000;
+  border-bottom-right-radius: 12px;
   text-align: center;
   float: left;
-  border-top-right-radius: 12px;
 }
 .boxFour{
   border-right: 3px solid #000;
@@ -150,11 +151,11 @@ legend {
 .boxSeven{
   border-right: 3px solid #000;
   border-top: 3px solid #000;
-  border-bottom-left-radius: 12px;
   text-align: center;
   float: left;
   clear:both;
   margin-left: 200px;
+  border-top-left-radius: 12px;
 }
 .boxEight{
   border-right: 3px solid #000;
@@ -166,9 +167,9 @@ legend {
 .boxNine{
   border-top: 3px solid #000;
   border-left: 3px solid #000;
-  border-bottom-right-radius: 12px;
   text-align: center;
   float: left;
+  border-top-right-radius: 12px;
 }
 /*
 body {

@@ -2,7 +2,8 @@
 
 // const api = require('../auth/api')
 // const ui = require('../auth/ui')
-const events = require('./auth/events.js')
+// const getFormFields = require(`../../../lib/get-form-fields`)
+// const events = require('./auth/events.js')
 
 const gameCellIds = [
   'box-0',
@@ -88,7 +89,7 @@ const checkForWinner = function () {
           'over': true
         }
       }
-      events.onSubmitMove(data)
+      // events.onSubmitMove(data)
       return
     } else {
       if (bCheck.every(x => x !== '&nbsp;')) {
