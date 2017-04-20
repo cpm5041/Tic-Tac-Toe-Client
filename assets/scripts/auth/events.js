@@ -75,6 +75,9 @@ const onGetIndex = function (event) {
     .then(ui.indexSuccess)
     .catch(ui.indexFailure)
 }
+// api.index()
+//    .then(ui.getStatsSuccess)
+//    .catch(ui.getStatsSuccess)
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)

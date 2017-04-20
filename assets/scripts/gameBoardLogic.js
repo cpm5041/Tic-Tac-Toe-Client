@@ -1,9 +1,7 @@
 'use strict'
 
-// const api = require('../auth/api')
-// const ui = require('../auth/ui')
-// const getFormFields = require(`../../../lib/get-form-fields`)
-// const events = require('./auth/events.js')
+const api = require('./auth/api')
+const ui = require('./auth/ui')
 
 const gameCellIds = [
   'box-0',
@@ -78,8 +76,6 @@ const checkForWinner = function () {
       $('#game_over_form').val('true')
       const player = $('#move_marker_form').val()
       const index = $('#index_form').val()
-      console.log(index)
-      console.log(player)
       let data = {
         'game': {
           'cell': {
@@ -89,7 +85,13 @@ const checkForWinner = function () {
           'over': true
         }
       }
-      // events.onSubmitMove(data)
+      api.submitMove(data)
+      .then(function (response) {
+        console.log(response)
+      })
+      api.index()
+      .then(ui.indexSuccess)
+      .catch(ui.submitFailure)
       return
     } else {
       if (bCheck.every(x => x !== '&nbsp;')) {

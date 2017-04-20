@@ -48,7 +48,6 @@ const createGame = (data) => {
 }
 // update game cells with each move
 const submitMove = (data) => {
-  // const game = store.game
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
@@ -70,6 +69,17 @@ const indexGame = (data) => {
     data
   })
 }
+
+const index = () => {
+  console.log('inside index')
+  return $.ajax({
+    url: config.apiOrigin + '/games?over=true',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 module.exports = {
   signUp,
   signIn,
@@ -77,5 +87,6 @@ module.exports = {
   changePassword,
   createGame,
   submitMove,
-  indexGame
+  indexGame,
+  index
 }

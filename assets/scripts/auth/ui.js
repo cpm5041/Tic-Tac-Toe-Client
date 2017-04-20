@@ -66,14 +66,20 @@ const createFailure = (error) => {
   console.error('error! ' + error)
 }
 const submitSuccess = (id) => {
-  console.log('submitSuccess worked!')
-  console.log(id)
+  // console.log('submitSuccess worked!')
+  // console.log(id)
   // store whatver you get back from the request so you can use it later
 }
 
 const submitFailure = (error) => {
   console.error('Submit failure ran. data: ', error)
 }
+
+const indexSuccess = (data) => {
+  const gameCount = data.games.length
+  console.log('game count is ', gameCount)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -86,5 +92,6 @@ module.exports = {
   createSuccess,
   createFailure,
   submitSuccess,
-  submitFailure
+  submitFailure,
+  indexSuccess
 }
