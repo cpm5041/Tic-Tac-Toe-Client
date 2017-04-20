@@ -70,14 +70,15 @@ const indexGame = (data) => {
   })
 }
 
-const index = () => {
+const index = (data) => {
   console.log('inside index')
   return $.ajax({
     url: config.apiOrigin + '/games?over=true',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data
   })
 }
 module.exports = {

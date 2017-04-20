@@ -75,6 +75,10 @@ const onGetIndex = function (event) {
     .then(ui.indexSuccess)
     .catch(ui.indexFailure)
 }
+const onUpdateStats = function () {
+  api.index()
+  .then(ui.indexSuccess)
+}
 // api.index()
 //    .then(ui.getStatsSuccess)
 //    .catch(ui.getStatsSuccess)
@@ -89,6 +93,7 @@ const addHandlers = () => {
   $('.box').on('click', onSubmitMove)
   $('#game-info').on('submit', onSubmitMove)
   $('#game-statistics').on('submit', onGetIndex)
+  $('#stats').on('click', onUpdateStats)
 }
 
 module.exports = {

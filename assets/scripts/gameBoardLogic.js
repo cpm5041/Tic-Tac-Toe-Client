@@ -3,6 +3,10 @@
 const api = require('./auth/api')
 const ui = require('./auth/ui')
 
+// api.index()
+// .then(ui.indexSuccess)
+// .catch(ui.submitFailure)
+
 const gameCellIds = [
   'box-0',
   'box-1',
@@ -89,9 +93,6 @@ const checkForWinner = function () {
       .then(function (response) {
         console.log(response)
       })
-      api.index()
-      .then(ui.indexSuccess)
-      .catch(ui.submitFailure)
       return
     } else {
       if (bCheck.every(x => x !== '&nbsp;')) {

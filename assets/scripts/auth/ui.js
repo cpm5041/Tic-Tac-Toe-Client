@@ -56,6 +56,7 @@ const createSuccess = (data) => {
   $('.box').text('&nbsp;')
   $('.box').html('&nbsp;')
   $('.game-board').show()
+  $('#stats').show()
   $('.box').on('click', game.clickValue)
   console.log('game created')
   console.log(data)
@@ -76,8 +77,10 @@ const submitFailure = (error) => {
 }
 
 const indexSuccess = (data) => {
-  const gameCount = data.games.length
-  console.log('game count is ', gameCount)
+  store.games = data.games
+  // const gameCount = data.games.length
+  console.log('game count is ', data.games.length)
+  $('#games-played').text('Games completed', data.games.length)
 }
 
 module.exports = {
