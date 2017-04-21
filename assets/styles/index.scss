@@ -28,6 +28,14 @@ legend {
   margin: 40px 0 0;
   clear: both;
 }
+.stats{
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  margin: 40px 0 0;
+  clear: both;
+}
 .signInSuccess{
   font-family: 'Nothing You Could Do', cursive;
   text-align: center;
@@ -35,12 +43,6 @@ legend {
   color: white;
   margin: 40px 0 0;
   clear: both;
-}
-.stats {
-  font-family: 'Permanent Marker', cursive;
-  border: 1px solid #000;
-  color: #000;
-  float: left;
 }
 
 .credentials {

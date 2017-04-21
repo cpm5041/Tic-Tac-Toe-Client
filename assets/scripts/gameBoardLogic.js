@@ -90,9 +90,9 @@ const checkForWinner = function () {
         }
       }
       api.submitMove(data)
-      .then(function (response) {
-        console.log(response)
-      })
+      // .then(function (response) {
+      //   console.log(response)
+      // })
       return
     } else {
       if (bCheck.every(x => x !== '&nbsp;')) {
@@ -137,7 +137,6 @@ const clickValue = function (e) {
     $(this).html(currentPlayer = currentPlayer === player1 ? player2 : player1)
     updateCell(e.target)
     $('#game-info').submit()
-    console.log('form was submitted')
   } $('#move_marker_form').val(currentPlayer)
 
   // $('#index_form').val(index)

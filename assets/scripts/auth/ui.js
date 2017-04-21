@@ -4,7 +4,6 @@ const store = require('../store')
 const game = require('../gameBoardLogic.js')
 
 const signUpSuccess = (data) => {
-  console.log(data)
   $('.userNotification').text('Sign-up Successful! Sign in to play!')
 }
 
@@ -29,11 +28,15 @@ const signInFailure = (error) => {
   $('.userNotification').text('Sign-in Failed! Try again')
 }
 const signOutSuccess = () => {
-  $('.userNotification').text('Signed out!')
+  $('.userNotification').text('Signed out! Sign back in to play!')
   $('#sign-in').show()
-  console.log('store is: ', store)
+  $('.newGame').hide()
+  $('.game-board').hide()
+  $('.newGame').hide
+  $('.stats').text('')
+  $('.box').text('&nbsp;')
+  $('.box').html('&nbsp;')
   store.user = null
-  console.log('store is: ', store)
 }
 
 const signOutFailure = (error) => {
@@ -41,9 +44,15 @@ const signOutFailure = (error) => {
   console.error('sign in failure ran. data: ', error)
 }
 const changePasswordSuccess = (data) => {
-  $('.userNotification').text('Password Changed!')
+  $('.userNotification').text('Password Changed! Sign in to play!')
   $('#sign-in').show()
-  console.log('Change password worked!')
+  $('.game-board').hide()
+  $('.newGame').hide()
+  $('.newGame').hide
+  $('.stats').text('')
+  $('.box').text('&nbsp;')
+  $('.box').html('&nbsp;')
+  // console.log('Change password worked!')
   // store whatver you get back from the request so you can use it later
 }
 
@@ -58,8 +67,6 @@ const createSuccess = (data) => {
   $('.game-board').show()
   $('#stats').show()
   $('.box').on('click', game.clickValue)
-  console.log('game created')
-  console.log(data)
   store.game = data.game
 }
 
@@ -67,8 +74,6 @@ const createFailure = (error) => {
   console.error('error! ' + error)
 }
 const submitSuccess = (id) => {
-  // console.log('submitSuccess worked!')
-  // console.log(id)
   // store whatver you get back from the request so you can use it later
 }
 
@@ -80,7 +85,7 @@ const indexSuccess = (data) => {
   store.games = data.games
   // const gameCount = data.games.length
   console.log('game count is ', data.games.length)
-  $('#games-played').text('Games completed', data.games.length)
+  $('#games-played').text('Games completed' + data.games.length)
 }
 
 module.exports = {
