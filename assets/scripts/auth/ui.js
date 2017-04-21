@@ -5,6 +5,7 @@ const game = require('../gameBoardLogic.js')
 
 const signUpSuccess = (data) => {
   $('.userNotification').text('Sign-up Successful! Sign in to play!')
+  $('#sign-up').trigger('reset')
 }
 
 const signUpFailure = (error) => {
@@ -20,6 +21,7 @@ const signInSuccess = (data) => {
   $('.pw').show()
   $('.sign-up').hide()
   $('#sign-in').hide()
+  $('#sign-in').trigger('reset')
   store.user = data.user
 }
 
@@ -29,7 +31,11 @@ const signInFailure = (error) => {
 }
 const signOutSuccess = () => {
   $('.userNotification').text('Signed out! Sign back in to play!')
+  $('.welcome').text('')
   $('#sign-in').show()
+  $('#sign-up').show()
+  $('.pw').hide()
+  $('#sign-out').hide()
   $('.newGame').hide()
   $('.game-board').hide()
   $('.newGame').hide
@@ -45,6 +51,7 @@ const signOutFailure = (error) => {
 }
 const changePasswordSuccess = (data) => {
   $('.userNotification').text('Password Changed! Sign in to play!')
+  $('.welcome').text('')
   $('#sign-in').show()
   $('.game-board').hide()
   $('.newGame').hide()
@@ -52,6 +59,7 @@ const changePasswordSuccess = (data) => {
   $('.stats').text('')
   $('.box').text('&nbsp;')
   $('.box').html('&nbsp;')
+  $('.pw').trigger('reset')
   // console.log('Change password worked!')
   // store whatver you get back from the request so you can use it later
 }
@@ -85,7 +93,7 @@ const indexSuccess = (data) => {
   store.games = data.games
   // const gameCount = data.games.length
   console.log('game count is ', data.games.length)
-  $('#games-played').text('Games completed' + data.games.length)
+  $('#games-played').text('Games completed: ' + data.games.length)
 }
 
 module.exports = {

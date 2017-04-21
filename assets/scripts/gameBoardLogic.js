@@ -98,6 +98,18 @@ const checkForWinner = function () {
       if (bCheck.every(x => x !== '&nbsp;')) {
         $('.welcome').text('We have a draw!')
         $('#game_over_form').val('true')
+        const player = $('#move_marker_form').val()
+        const index = $('#index_form').val()
+        let data = {
+          'game': {
+            'cell': {
+              'index': index,
+              'value': player
+            },
+            'over': true
+          }
+        }
+        api.submitMove(data)
         return
       }
     }
