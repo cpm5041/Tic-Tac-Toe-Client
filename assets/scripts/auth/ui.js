@@ -13,7 +13,7 @@ const signUpFailure = (error) => {
   $('.userNotification').text('Sign-up Failed! Try Again!')
 }
 const signInSuccess = (data) => {
-  console.log('sign in success ran. data: ', data)
+  // console.log('sign in success ran. data: ', data)
   $('.welcome').text('Play some Tic-Tac-Toe!')
   $('.userNotification').text('Sign-in Successful! Lets Play!')
   $('.newGame').show()
@@ -92,7 +92,7 @@ const submitFailure = (error) => {
 const indexSuccess = (data) => {
   store.games = data.games
   // const gameCount = data.games.length
-  console.log('game count is ', data.games.length)
+  // console.log('game count is ', data.games.length)
   $('#games-played').text('Games completed: ' + data.games.length)
 }
 

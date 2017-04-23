@@ -10,14 +10,14 @@ const onSignUp = function (event) {
   // this here is pointing to event.target from last lesson
   // grabbing all data out of the form, putting it into object
   const data = getFormFields(event.target)
-  console.log('sign up ran')
+  // console.log('sign up ran')
   event.preventDefault()
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
 }
 const onSignIn = function (event) {
-  console.log('sign in ran')
+  // console.log('sign in ran')
   // this here is pointing to event.target from last lesson
   // grabbing all data out of the form, putting it into object
   const data = getFormFields(this)
@@ -53,8 +53,8 @@ const onSubmitMove = function (event) {
   const id = getFormFields(event.target)
   const player = $('#move_marker_form').val()
   const index = $('#index_form').val()
-  console.log(index)
-  console.log(player)
+  // console.log(index)
+  // console.log(player)
   let data = {
     'game': {
       'cell': {

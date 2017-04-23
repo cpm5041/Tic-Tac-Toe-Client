@@ -26,7 +26,7 @@ const signOut = () => {
   })
 }
 const changePassword = (data) => {
-  console.log(data)
+  // console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/change-password/' + store.user.id,
     method: 'PATCH',
@@ -58,7 +58,7 @@ const submitMove = (data) => {
   })
 }
 const indexGame = (data) => {
-  console.log(data)
+  // console.log(data)
   const game = store.game
   return $.ajax({
     url: config.apiOrigin + '/games/' + game.id,
@@ -71,7 +71,7 @@ const indexGame = (data) => {
 }
 
 const index = (data) => {
-  console.log('inside index')
+  // console.log('inside index')
   return $.ajax({
     url: config.apiOrigin + '/games?over=true',
     method: 'GET',
