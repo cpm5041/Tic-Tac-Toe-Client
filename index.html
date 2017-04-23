@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chris's Tic Tac Toe Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="assets/styles/index.css"> -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+  <body class="container-fluid" background='https://i.imgur.com/Kae8lUv.jpg'>
+      <form id="sign-up" class="credentials sign-up">
+        <fieldset>
+          <legend>Sign up to play!</legend>
+          <input type="text" name="credentials[email]" value="" placeholder="email">
+          <input type="password" name="credentials[password]" value="" placeholder="password">
+          <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
+          <input class="credentials" type="submit" name="submit" value="Sign up!">
+        </fieldset>
+      </form>
+      <form id="sign-in" class="credentials">
+        <fieldset>
+          <legend>Sign in!</legend>
+          <input type="text" name="credentials[email]" value="" placeholder="email">
+          <input type="password" name="credentials[password]" value="" placeholder="password">
+          <input class="credentials" type="submit" name="submit" value="Sign in!">
+        </fieldset>
+      </form>
+      <form id="sign-out" class="credentials signOut">
+        <fieldset>
+          <legend>Sign out!</legend>
+          <input class="credentials" type="submit" name="submit" value="Sign out!">
+        </fieldset>
+      </form>
+      <form id="change-password" class="credentials pw">
+        <fieldset>
+          <legend>Change Password</legend>
+          <input type="password" name="passwords[old]" value="" placeholder="Old Password">
+          <input type="password" name="passwords[new]" value="" placeholder="New Password">
+          <input class="credentials" type="submit" name="submit" value="Change Password">
+        </fieldset>
+      </form>
+<h2 class='userNotification'>&nbsp;</h2>
+  <h1 class='welcome'>Sign in to play some Tic-Tac-Toe!</h1>
+  <div style="text-align:center;"><button type='button' id='create' class='newGame'>New Game!</button></div>
+  <br>
+  <div style="text-align:center;"><button type='button' id='stats' class='newGame'>Game Stats!</button></div>
+  <h5 class='stats' id='games-played'>&nbsp;</h5>
+  <div class='game-board'>
+    <div class='boxSeven box' id="6"> &nbsp;</div>
+    <div class='boxEight box' id="7">&nbsp;</div>
+    <div class='boxNine box' id="8">&nbsp;</div>
+    <div class='boxFour box' id="3">&nbsp;</div>
+    <div class='boxFive box' id="4">&nbsp;</div>
+    <div class='boxSix box' id="5">&nbsp;</div>
+    <div class='boxOne box' id="0">&nbsp;</div>
+    <div class='boxTwo box' id="1">&nbsp;</div>
+    <div class='boxThree box' id="2">&nbsp;</div>
+
+  </div>
+  <form id="game_info" style="display:none">
+  <input id="index_form" name="game[cell][index]" type="text" value="0">
+  <input id="move_marker_form" name="game[cell][value]" type="text" value="x">
+  <input id="game_over_form" name="game[over]" type="text" value="false">
+</form>
+</body>
+
+</html>
